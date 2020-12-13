@@ -7,16 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 
 public class AddServlet extends HttpServlet {
 	
-	public void service(HttpServletRequest req , HttpServletResponse res)
+	public void service(HttpServletRequest req , HttpServletResponse res) throws IOException
 	{
-		try {
-			int a  = Integer.parseInt(req.getParameter("num1"));
-			int b =  Integer.parseInt(req.getParameter("num2"));
-			res.getWriter().print("Response from the server says"+(a+b));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		res.getWriter().print("data will be saved soon");
 	}
 
 }
