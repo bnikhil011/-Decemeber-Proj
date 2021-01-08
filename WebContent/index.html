@@ -3,6 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 <script type="text/javascript">
 function validate()
  {
@@ -21,10 +22,35 @@ function validate()
 	return true;
  }
 </script>
+
 </head>
 <body>
+<script type="text/javascript">
+console.log("JavaScript Started")
+
+function validatefrm()
+ {
+	console.log("validafrm started")
+	var name = document.forms["userform"]["name"].value;
+	var email = document.forms["userform"]["emailid"].value;
+	var pass = document.forms["userform"]["password"].value;
+	var repass = document.forms["userform"]["repassword"].value;
+	if (name =="" || email=="" || pass=="" || repass=="")
+		{alert("PLEASE ENTER ALL THE REQUIRED FIELDS MARKER WITH *")
+		return false;
+		}
+	if(pass!=repass)
+		{alert("Password is not matching.")
+		return false;
+		}
+	return true;
+ }
+</script>
 <h1>Registration Form </h1>
+
+<form action="add" onsubmit="return validatefrm()" method="get" name="userform" >
 <form action="add" method="get" name="userform" onsubmit="return validate()">
+
 <input type="text" placeholder="Enter Name *" name ="name"><br>
 <input type="email" placeholder="Enter emailid *" name ="emailid"> <br>
 <input type="password" placeholder="Passoord *" name ="password"> <br>
