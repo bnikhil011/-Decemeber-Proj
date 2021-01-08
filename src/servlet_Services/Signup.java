@@ -5,11 +5,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class AddServlet extends HttpServlet {
-	
+import model.Student;
+import service.UserService;
+
+public class Signup extends HttpServlet {
+	private Student student ;
+	private UserService userservice;
 	public void service(HttpServletRequest req , HttpServletResponse res) throws IOException
 	{
-		res.getWriter().print("data will be saved soon");
+		this.student = new Student();
+		this.userservice = new UserService();
+		student.setName(req.getParameter("name"));
+		student.setEmailid(req.getParameter("emailid"));
+		student.setPassword(req.getParameter("password"));
+		if(this.userservice.signup(this.student))
+			res.getWriter().print("User data is saved sucessfully");
+		
+		
 	}
 
 }

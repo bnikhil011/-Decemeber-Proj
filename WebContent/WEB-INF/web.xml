@@ -12,7 +12,7 @@
   
   <servlet>
   <servlet-name>addServlet</servlet-name>
-  <servlet-class>servlet_Services.AddServlet</servlet-class>
+  <servlet-class>servlet_Services.Signup</servlet-class>
   </servlet>
   <servlet-mapping>
   <servlet-name>addServlet</servlet-name>
